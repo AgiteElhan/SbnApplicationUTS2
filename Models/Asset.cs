@@ -26,4 +26,4 @@ namespace SbnApplicationUTS2.Models
         public DateTime ModDate { get; set; }
     }
 }
-}
+

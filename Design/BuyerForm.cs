@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SbnApplicationUTS2.Data;
 using SbnApplicationUTS2.Models;
 using System;
 using System.Collections.Generic;
@@ -17,11 +18,13 @@ namespace SbnApplicationUTS.Design
 {
     public partial class BuyerForm : Form
     {
-        private SBNContext db = new SBNContext();
+        private AppDbContext db = new AppDbContext();
         private int selectedBuyerId = -1;
         public BuyerForm()
         {
             InitializeComponent();
+            LoadData();
+            this.Load += BuyerForm_Load;
         }
 
         internal void setVisible(bool v)
@@ -35,8 +38,11 @@ namespace SbnApplicationUTS.Design
         }
         private void LoadData()
         {
-         dgvBuyer.DataSource = db.Buyers.ToList();
-            ClearForm();
+            dgvBuyer.DataSource = db.Buyers.ToList();
+        
+            dgvBuyer.AutoGenerateColumns = true;
+            var data = db.Buyers.ToList();
+            dgvBuyer.DataSource = data;
         }
         private void ClearForm()
         {
@@ -62,8 +68,8 @@ namespace SbnApplicationUTS.Design
         {
             var buyer = new Buyer
             {
-                BuyerCode = txtCode.Text,
-                BuyerName = txtName.Text,
+                Code = txtCode.Text,
+                Nama = txtName.Text,
                 Email = txtEmail.Text,
                 PhoneNumber = txtPhone.Text,
                 Address = txtAddress.Text
@@ -87,8 +93,8 @@ namespace SbnApplicationUTS.Design
             var buyer = db.Buyers.Find(selectedBuyerId);
             if (buyer != null)
             {
-                buyer.BuyerCode = txtCode.Text;
-                buyer.BuyerName = txtName.Text;
+                buyer.Code = txtCode.Text;
+                buyer.Nama = txtName.Text;
                 buyer.Email = txtEmail.Text;
                 buyer.PhoneNumber = txtPhone.Text;
                 buyer.Address = txtAddress.Text;
@@ -127,9 +133,9 @@ namespace SbnApplicationUTS.Design
             if (e.RowIndex >= 0)
             {
                 var row = dgvBuyer.Rows[e.RowIndex];
-                selectedBuyerId = Convert.ToInt32(row.Cells["BuyerId"].Value);
-                txtCode.Text = row.Cells["BuyerCode"].Value.ToString();
-                txtName.Text = row.Cells["BuyerName"].Value.ToString();
+                selectedBuyerId = Convert.ToInt32(row.Cells["Id"].Value);
+                txtCode.Text = row.Cells["Code"].Value.ToString();
+                txtName.Text = row.Cells["Nama"].Value.ToString();
                 txtEmail.Text = row.Cells["Email"].Value.ToString();
                 txtPhone.Text = row.Cells["PhoneNumber"].Value.ToString();
                 txtAddress.Text = row.Cells["Address"].Value.ToString();

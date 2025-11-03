@@ -9,6 +9,8 @@ namespace SbnApplicationUTS2.Models
     public class Buyer
     {
         public int Id { get; set; }
+        public string Code { get; set; }
+
         public string Nama { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }

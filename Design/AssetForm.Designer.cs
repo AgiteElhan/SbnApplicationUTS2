@@ -33,18 +33,18 @@
             label5 = new Label();
             label7 = new Label();
             label9 = new Label();
-            txt_kode_buyer = new TextBox();
-            txt_kode_sbn = new TextBox();
-            txt_jumlah = new TextBox();
-            txt_total_harga = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            btn_tambah = new Button();
-            btn_update = new Button();
-            btn_hapus = new Button();
-            btn_clear = new Button();
+            txtDetailBuyer = new TextBox();
+            txtSbnDetail = new TextBox();
+            txtJumlah = new TextBox();
+            txtTotal = new TextBox();
+            dtpTanggal = new DateTimePicker();
+            btnAdd = new Button();
+            btnUpdate = new Button();
+            btnDelete = new Button();
+            btnClear = new Button();
             dataGridView1 = new DataGridView();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            cmbBuyer = new ComboBox();
+            cmbSBN = new ComboBox();
             btnBack = new Button();
             label1 = new Label();
             label4 = new Label();
@@ -107,132 +107,139 @@
             label9.TabIndex = 8;
             label9.Text = "Tanggal Transaksi";
             // 
-            // txt_kode_buyer
+            // txtDetailBuyer
             // 
-            txt_kode_buyer.Location = new Point(327, 223);
-            txt_kode_buyer.Margin = new Padding(4, 4, 4, 4);
-            txt_kode_buyer.Multiline = true;
-            txt_kode_buyer.Name = "txt_kode_buyer";
-            txt_kode_buyer.ReadOnly = true;
-            txt_kode_buyer.Size = new Size(185, 112);
-            txt_kode_buyer.TabIndex = 10;
+            txtDetailBuyer.Location = new Point(327, 223);
+            txtDetailBuyer.Margin = new Padding(4);
+            txtDetailBuyer.Multiline = true;
+            txtDetailBuyer.Name = "txtDetailBuyer";
+            txtDetailBuyer.ReadOnly = true;
+            txtDetailBuyer.Size = new Size(185, 112);
+            txtDetailBuyer.TabIndex = 10;
+            txtDetailBuyer.TextChanged += txtDetailBuyer_TextChanged;
             // 
-            // txt_kode_sbn
+            // txtSbnDetail
             // 
-            txt_kode_sbn.Location = new Point(327, 381);
-            txt_kode_sbn.Margin = new Padding(4, 4, 4, 4);
-            txt_kode_sbn.Multiline = true;
-            txt_kode_sbn.Name = "txt_kode_sbn";
-            txt_kode_sbn.ReadOnly = true;
-            txt_kode_sbn.Size = new Size(185, 101);
-            txt_kode_sbn.TabIndex = 12;
+            txtSbnDetail.Location = new Point(327, 381);
+            txtSbnDetail.Margin = new Padding(4);
+            txtSbnDetail.Multiline = true;
+            txtSbnDetail.Name = "txtSbnDetail";
+            txtSbnDetail.ReadOnly = true;
+            txtSbnDetail.Size = new Size(185, 101);
+            txtSbnDetail.TabIndex = 12;
             // 
-            // txt_jumlah
+            // txtJumlah
             // 
-            txt_jumlah.Location = new Point(200, 511);
-            txt_jumlah.Margin = new Padding(4, 4, 4, 4);
-            txt_jumlah.Name = "txt_jumlah";
-            txt_jumlah.Size = new Size(312, 31);
-            txt_jumlah.TabIndex = 15;
+            txtJumlah.Location = new Point(200, 511);
+            txtJumlah.Margin = new Padding(4);
+            txtJumlah.Name = "txtJumlah";
+            txtJumlah.Size = new Size(312, 31);
+            txtJumlah.TabIndex = 15;
             // 
-            // txt_total_harga
+            // txtTotal
             // 
-            txt_total_harga.Location = new Point(200, 580);
-            txt_total_harga.Margin = new Padding(4, 4, 4, 4);
-            txt_total_harga.Name = "txt_total_harga";
-            txt_total_harga.ReadOnly = true;
-            txt_total_harga.Size = new Size(312, 31);
-            txt_total_harga.TabIndex = 16;
+            txtTotal.Location = new Point(200, 580);
+            txtTotal.Margin = new Padding(4);
+            txtTotal.Name = "txtTotal";
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(312, 31);
+            txtTotal.TabIndex = 16;
             // 
-            // dateTimePicker1
+            // dtpTanggal
             // 
-            dateTimePicker1.Location = new Point(200, 153);
-            dateTimePicker1.Margin = new Padding(4, 4, 4, 4);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(312, 31);
-            dateTimePicker1.TabIndex = 17;
+            dtpTanggal.Location = new Point(200, 153);
+            dtpTanggal.Margin = new Padding(4);
+            dtpTanggal.Name = "dtpTanggal";
+            dtpTanggal.Size = new Size(312, 31);
+            dtpTanggal.TabIndex = 17;
             // 
-            // btn_tambah
+            // btnAdd
             // 
-            btn_tambah.BackColor = Color.FromArgb(45, 45, 45);
-            btn_tambah.FlatAppearance.BorderSize = 0;
-            btn_tambah.FlatStyle = FlatStyle.Flat;
-            btn_tambah.ForeColor = Color.White;
-            btn_tambah.Location = new Point(87, 637);
-            btn_tambah.Margin = new Padding(4, 4, 4, 4);
-            btn_tambah.Name = "btn_tambah";
-            btn_tambah.Size = new Size(90, 34);
-            btn_tambah.TabIndex = 18;
-            btn_tambah.Text = "Add";
-            btn_tambah.UseVisualStyleBackColor = false;
+            btnAdd.BackColor = Color.FromArgb(45, 45, 45);
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = Color.White;
+            btnAdd.Location = new Point(87, 637);
+            btnAdd.Margin = new Padding(4);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(90, 34);
+            btnAdd.TabIndex = 18;
+            btnAdd.Text = "Add";
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
             // 
-            // btn_update
+            // btnUpdate
             // 
-            btn_update.BackColor = Color.FromArgb(45, 45, 45);
-            btn_update.FlatAppearance.BorderSize = 0;
-            btn_update.FlatStyle = FlatStyle.Flat;
-            btn_update.ForeColor = Color.White;
-            btn_update.Location = new Point(200, 635);
-            btn_update.Margin = new Padding(4, 4, 4, 4);
-            btn_update.Name = "btn_update";
-            btn_update.Size = new Size(90, 34);
-            btn_update.TabIndex = 19;
-            btn_update.Text = "Update";
-            btn_update.UseVisualStyleBackColor = false;
+            btnUpdate.BackColor = Color.FromArgb(45, 45, 45);
+            btnUpdate.FlatAppearance.BorderSize = 0;
+            btnUpdate.FlatStyle = FlatStyle.Flat;
+            btnUpdate.ForeColor = Color.White;
+            btnUpdate.Location = new Point(200, 635);
+            btnUpdate.Margin = new Padding(4);
+            btnUpdate.Name = "btnUpdate";
+            btnUpdate.Size = new Size(90, 34);
+            btnUpdate.TabIndex = 19;
+            btnUpdate.Text = "Update";
+            btnUpdate.UseVisualStyleBackColor = false;
+            btnUpdate.Click += btnUpdate_Click;
             // 
-            // btn_hapus
+            // btnDelete
             // 
-            btn_hapus.BackColor = Color.FromArgb(45, 45, 45);
-            btn_hapus.FlatAppearance.BorderSize = 0;
-            btn_hapus.FlatStyle = FlatStyle.Flat;
-            btn_hapus.ForeColor = Color.White;
-            btn_hapus.Location = new Point(310, 637);
-            btn_hapus.Margin = new Padding(4, 4, 4, 4);
-            btn_hapus.Name = "btn_hapus";
-            btn_hapus.Size = new Size(90, 34);
-            btn_hapus.TabIndex = 20;
-            btn_hapus.Text = "Delete";
-            btn_hapus.UseVisualStyleBackColor = false;
+            btnDelete.BackColor = Color.FromArgb(45, 45, 45);
+            btnDelete.FlatAppearance.BorderSize = 0;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.ForeColor = Color.White;
+            btnDelete.Location = new Point(310, 637);
+            btnDelete.Margin = new Padding(4);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(90, 34);
+            btnDelete.TabIndex = 20;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // btn_clear
+            // btnClear
             // 
-            btn_clear.BackColor = Color.FromArgb(45, 45, 45);
-            btn_clear.FlatAppearance.BorderSize = 0;
-            btn_clear.FlatStyle = FlatStyle.Flat;
-            btn_clear.ForeColor = Color.White;
-            btn_clear.Location = new Point(421, 637);
-            btn_clear.Margin = new Padding(4, 4, 4, 4);
-            btn_clear.Name = "btn_clear";
-            btn_clear.Size = new Size(90, 34);
-            btn_clear.TabIndex = 21;
-            btn_clear.Text = "Clear";
-            btn_clear.UseVisualStyleBackColor = false;
+            btnClear.BackColor = Color.FromArgb(45, 45, 45);
+            btnClear.FlatAppearance.BorderSize = 0;
+            btnClear.FlatStyle = FlatStyle.Flat;
+            btnClear.ForeColor = Color.White;
+            btnClear.Location = new Point(421, 637);
+            btnClear.Margin = new Padding(4);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(90, 34);
+            btnClear.TabIndex = 21;
+            btnClear.Text = "Clear";
+            btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(549, 153);
-            dataGridView1.Margin = new Padding(4, 4, 4, 4);
+            dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(514, 568);
             dataGridView1.TabIndex = 22;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // comboBox1
+            // cmbBuyer
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(200, 223);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(111, 33);
-            comboBox1.TabIndex = 24;
+            cmbBuyer.FormattingEnabled = true;
+            cmbBuyer.Location = new Point(200, 223);
+            cmbBuyer.Name = "cmbBuyer";
+            cmbBuyer.Size = new Size(111, 33);
+            cmbBuyer.TabIndex = 24;
+            cmbBuyer.SelectedIndexChanged += cmbBuyer_SelectedIndexChanged;
             // 
-            // comboBox2
+            // cmbSBN
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(200, 381);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(111, 33);
-            comboBox2.TabIndex = 25;
+            cmbSBN.FormattingEnabled = true;
+            cmbSBN.Location = new Point(200, 381);
+            cmbSBN.Name = "cmbSBN";
+            cmbSBN.Size = new Size(111, 33);
+            cmbSBN.TabIndex = 25;
             // 
             // btnBack
             // 
@@ -294,24 +301,24 @@
             Controls.Add(label1);
             Controls.Add(label4);
             Controls.Add(btnBack);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbSBN);
+            Controls.Add(cmbBuyer);
             Controls.Add(dataGridView1);
-            Controls.Add(btn_clear);
-            Controls.Add(btn_hapus);
-            Controls.Add(btn_update);
-            Controls.Add(btn_tambah);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(txt_total_harga);
-            Controls.Add(txt_jumlah);
-            Controls.Add(txt_kode_sbn);
-            Controls.Add(txt_kode_buyer);
+            Controls.Add(btnClear);
+            Controls.Add(btnDelete);
+            Controls.Add(btnUpdate);
+            Controls.Add(btnAdd);
+            Controls.Add(dtpTanggal);
+            Controls.Add(txtTotal);
+            Controls.Add(txtJumlah);
+            Controls.Add(txtSbnDetail);
+            Controls.Add(txtDetailBuyer);
             Controls.Add(label9);
             Controls.Add(label7);
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label2);
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "AssetForm";
             Text = "AssetForm";
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -325,18 +332,18 @@
         private Label label5;
         private Label label7;
         private Label label9;
-        private TextBox txt_kode_buyer;
-        private TextBox txt_kode_sbn;
-        private TextBox txt_jumlah;
-        private TextBox txt_total_harga;
-        private DateTimePicker dateTimePicker1;
-        private Button btn_tambah;
-        private Button btn_update;
-        private Button btn_hapus;
-        private Button btn_clear;
+        private TextBox txtDetailBuyer;
+        private TextBox txtSbnDetail;
+        private TextBox txtJumlah;
+        private TextBox txtTotal;
+        private DateTimePicker dtpTanggal;
+        private Button btnAdd;
+        private Button btnUpdate;
+        private Button btnDelete;
+        private Button btnClear;
         private DataGridView dataGridView1;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox cmbBuyer;
+        private ComboBox cmbSBN;
         private Button btnBack;
         private Label label1;
         private Label label4;
