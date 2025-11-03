@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SbnApplicationUTS2;
 using SbnApplicationUTS2.Data;
 using SbnApplicationUTS2.Models;
 using System;
@@ -182,6 +183,12 @@ namespace SbnApplicationUTS.Design
                     }
                 }
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm formHome = new HomeForm();
+            formHome.setVisible(true);
         }
     }
 }

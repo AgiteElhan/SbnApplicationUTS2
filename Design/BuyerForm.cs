@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SbnApplicationUTS2;
 using SbnApplicationUTS2.Data;
 using SbnApplicationUTS2.Models;
 using System;
@@ -39,7 +40,7 @@ namespace SbnApplicationUTS.Design
         private void LoadData()
         {
             dgvBuyer.DataSource = db.Buyers.ToList();
-        
+
             dgvBuyer.AutoGenerateColumns = true;
             var data = db.Buyers.ToList();
             dgvBuyer.DataSource = data;
@@ -140,6 +141,12 @@ namespace SbnApplicationUTS.Design
                 txtPhone.Text = row.Cells["PhoneNumber"].Value.ToString();
                 txtAddress.Text = row.Cells["Address"].Value.ToString();
             }
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm formHome = new HomeForm();
+            formHome.setVisible(true);
         }
     }
 }

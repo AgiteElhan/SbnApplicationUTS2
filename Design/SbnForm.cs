@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SbnApplicationUTS2;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace SbnApplication2.Design
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeForm formHome = new HomeForm();
+            formHome.setVisible(true);
         }
     }
 }

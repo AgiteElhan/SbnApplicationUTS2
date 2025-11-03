@@ -104,7 +104,7 @@
             // txtName
             // 
             txtName.Location = new Point(208, 174);
-            txtName.Margin = new Padding(4, 4, 4, 4);
+            txtName.Margin = new Padding(4);
             txtName.Name = "txtName";
             txtName.Size = new Size(314, 31);
             txtName.TabIndex = 7;
@@ -112,7 +112,7 @@
             // txtEmail
             // 
             txtEmail.Location = new Point(208, 225);
-            txtEmail.Margin = new Padding(4, 4, 4, 4);
+            txtEmail.Margin = new Padding(4);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(314, 31);
             txtEmail.TabIndex = 8;
@@ -120,7 +120,7 @@
             // txtPhone
             // 
             txtPhone.Location = new Point(208, 276);
-            txtPhone.Margin = new Padding(4, 4, 4, 4);
+            txtPhone.Margin = new Padding(4);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(314, 31);
             txtPhone.TabIndex = 9;
@@ -128,7 +128,7 @@
             // txtAddress
             // 
             txtAddress.Location = new Point(208, 329);
-            txtAddress.Margin = new Padding(4, 4, 4, 4);
+            txtAddress.Margin = new Padding(4);
             txtAddress.Name = "txtAddress";
             txtAddress.Size = new Size(314, 31);
             txtAddress.TabIndex = 10;
@@ -139,7 +139,7 @@
             btnAddBuyer.FlatAppearance.BorderSize = 0;
             btnAddBuyer.FlatStyle = FlatStyle.Flat;
             btnAddBuyer.Location = new Point(49, 396);
-            btnAddBuyer.Margin = new Padding(4, 4, 4, 4);
+            btnAddBuyer.Margin = new Padding(4);
             btnAddBuyer.Name = "btnAddBuyer";
             btnAddBuyer.Size = new Size(118, 36);
             btnAddBuyer.TabIndex = 11;
@@ -153,7 +153,7 @@
             btnUpdate.FlatAppearance.BorderSize = 0;
             btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Location = new Point(174, 396);
-            btnUpdate.Margin = new Padding(4, 4, 4, 4);
+            btnUpdate.Margin = new Padding(4);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(118, 36);
             btnUpdate.TabIndex = 12;
@@ -167,7 +167,7 @@
             btnDelete.FlatAppearance.BorderSize = 0;
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Location = new Point(299, 396);
-            btnDelete.Margin = new Padding(4, 4, 4, 4);
+            btnDelete.Margin = new Padding(4);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(118, 36);
             btnDelete.TabIndex = 13;
@@ -181,7 +181,7 @@
             btnClear.FlatAppearance.BorderSize = 0;
             btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Location = new Point(424, 396);
-            btnClear.Margin = new Padding(4, 4, 4, 4);
+            btnClear.Margin = new Padding(4);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(118, 36);
             btnClear.TabIndex = 14;
@@ -193,7 +193,7 @@
             // 
             dgvBuyer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBuyer.Location = new Point(552, 130);
-            dgvBuyer.Margin = new Padding(4, 4, 4, 4);
+            dgvBuyer.Margin = new Padding(4);
             dgvBuyer.Name = "dgvBuyer";
             dgvBuyer.RowHeadersWidth = 51;
             dgvBuyer.Size = new Size(512, 321);
@@ -206,12 +206,13 @@
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.Location = new Point(49, 478);
-            btnBack.Margin = new Padding(4, 4, 4, 4);
+            btnBack.Margin = new Padding(4);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(118, 36);
             btnBack.TabIndex = 16;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // label7
             // 
@@ -279,7 +280,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             ForeColor = Color.White;
-            Margin = new Padding(4, 4, 4, 4);
+            Margin = new Padding(4);
             Name = "BuyerForm";
             Text = "BuyerForm";
             Load += BuyerForm_Load;

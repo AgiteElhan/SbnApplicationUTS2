@@ -205,6 +205,7 @@
             btnBack.TabIndex = 14;
             btnBack.Text = "Back";
             btnBack.UseVisualStyleBackColor = false;
+            btnBack.Click += btnBack_Click;
             // 
             // dataGridSBN
             // 

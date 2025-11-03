@@ -9,7 +9,10 @@ namespace SbnApplicationUTS2
         {
             InitializeComponent();
         }
-
+        internal void setVisible(bool v)
+        {
+            this.Visible = v;
+        }
         private void btnBuyer_Click(object sender, EventArgs e)
         {
             BuyerForm formBuyer = new BuyerForm();
