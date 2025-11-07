@@ -17,6 +17,7 @@ namespace SbnApplicationUTS.Design
     public partial class AssetForm : Form
     {
         private readonly AppDbContext _context;
+        private decimal hargaSatuan = 0;
 
         public AssetForm()
         {
@@ -190,6 +191,50 @@ namespace SbnApplicationUTS.Design
             HomeForm formHome = new HomeForm();
             formHome.setVisible(true);
         }
+
+        private void cmbSBN_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbSBN.SelectedValue != null && int.TryParse(cmbSBN.SelectedValue.ToString(), out int sbnId))
+            {
+                using (var db = new AppDbContext())
+                {
+                    var sbn = db.SBNs.FirstOrDefault(b => b.Id == sbnId);
+                    if (sbn != null)
+                    {
+                        hargaSatuan = sbn.Harga; // Simpan harga untuk perhitungan nanti
+                        txtSbnDetail.Text =
+                            $"Kode SBN : {sbn.Kode_Sbn}\r\n" +
+                            $"Nama SBN : {sbn.Nama_SBN}\r\n" +
+                            $"Jenis     : {sbn.Jenis}\r\n" +
+                            $"Harga/Unit: {sbn.Harga:N0}";
+                    }
+                }
+            }
+            else
+            {
+                txtSbnDetail.Text = string.Empty;
+                hargaSatuan = 0;
+            }
+        }
+
+        private void btnHitung_Click(object sender, EventArgs e)
+        {
+            if (hargaSatuan == 0)
+            {
+                MessageBox.Show("Pilih SBN terlebih dahulu.", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (!decimal.TryParse(txtJumlah.Text, out decimal jumlah))
+            {
+                MessageBox.Show("Masukkan jumlah yang valid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            decimal total = jumlah * hargaSatuan;
+            txtTotal.Text = total.ToString("N0");
+        }
     }
-}
+ }
+
 

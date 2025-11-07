@@ -49,6 +49,7 @@
             label1 = new Label();
             label4 = new Label();
             label8 = new Label();
+            btnHitung = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -159,7 +160,7 @@
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(87, 637);
+            btnAdd.Location = new Point(85, 635);
             btnAdd.Margin = new Padding(4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(90, 34);
@@ -240,6 +241,7 @@
             cmbSBN.Name = "cmbSBN";
             cmbSBN.Size = new Size(111, 33);
             cmbSBN.TabIndex = 25;
+            cmbSBN.SelectedIndexChanged += cmbSBN_SelectedIndexChanged;
             // 
             // btnBack
             // 
@@ -247,7 +249,7 @@
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(85, 723);
+            btnBack.Location = new Point(85, 762);
             btnBack.Margin = new Padding(4);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(90, 34);
@@ -292,12 +294,28 @@
             label8.TabIndex = 29;
             label8.Text = "🏦  SBN APPLICATION";
             // 
+            // btnHitung
+            // 
+            btnHitung.BackColor = Color.FromArgb(45, 45, 45);
+            btnHitung.FlatAppearance.BorderSize = 0;
+            btnHitung.FlatStyle = FlatStyle.Flat;
+            btnHitung.ForeColor = Color.White;
+            btnHitung.Location = new Point(85, 699);
+            btnHitung.Margin = new Padding(4);
+            btnHitung.Name = "btnHitung";
+            btnHitung.Size = new Size(90, 34);
+            btnHitung.TabIndex = 30;
+            btnHitung.Text = "Hitung";
+            btnHitung.UseVisualStyleBackColor = false;
+            btnHitung.Click += btnHitung_Click;
+            // 
             // AssetForm
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(1078, 844);
+            Controls.Add(btnHitung);
             Controls.Add(label8);
             Controls.Add(label1);
             Controls.Add(label4);
@@ -349,5 +367,6 @@
         private Label label1;
         private Label label4;
         private Label label8;
+        private Button btnHitung;
     }
 }
