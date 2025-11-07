@@ -26,7 +26,7 @@ namespace SbnApplicationUTS.Design
             InitializeComponent();
             LoadData();
             this.Load += BuyerForm_Load;
-        }
+        } 
 
         internal void setVisible(bool v)
         {

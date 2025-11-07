@@ -1,4 +1,4 @@
-using SbnApplication2.Design;
+using SbnApplicationUTS2.Design;
 using SbnApplicationUTS.Design;
 
 namespace SbnApplicationUTS2

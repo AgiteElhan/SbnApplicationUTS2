@@ -32,14 +32,29 @@ namespace SbnApplicationUTS.Design
         }
         private void LoadComboBoxes()
         {
-            cmbBuyer.DataSource = _context.Buyers.ToList();
+            // Matikan sementara event SelectedIndexChanged biar tidak error saat load
+            cmbBuyer.SelectedIndexChanged -= cmbBuyer_SelectedIndexChanged;
+            cmbSBN.SelectedIndexChanged -= cmbSBN_SelectedIndexChanged;
+
+            // Load data Buyer
+            var buyers = _context.Buyers.ToList();
+            cmbBuyer.DataSource = buyers;
             cmbBuyer.DisplayMember = "Nama";
             cmbBuyer.ValueMember = "Id";
+            cmbBuyer.SelectedIndex = -1; // tidak pilih apapun saat awal
 
-            cmbSBN.DataSource = _context.SBNs.ToList();
-            cmbSBN.DisplayMember = "NamaSBN";
+            // Load data SBN
+            var sbns = _context.SBNs.ToList();
+            cmbSBN.DataSource = sbns;
+            cmbSBN.DisplayMember = "Nama_SBN";
             cmbSBN.ValueMember = "Id";
+            cmbSBN.SelectedIndex = -1;
+
+            // Aktifkan lagi event setelah data terload
+            cmbBuyer.SelectedIndexChanged += cmbBuyer_SelectedIndexChanged;
+            cmbSBN.SelectedIndexChanged += cmbSBN_SelectedIndexChanged;
         }
+
         private void ClearForm()
         {
             cmbBuyer.SelectedIndex = -1;
@@ -47,6 +62,8 @@ namespace SbnApplicationUTS.Design
             txtJumlah.Text = string.Empty;
             txtTotal.Text = string.Empty;
             dtpTanggal.Value = DateTime.Now;
+            txtDetailBuyer.Text = string.Empty;
+            txtSbnDetail.Text = string.Empty;
         }
         private void LoadData()
         {
@@ -81,18 +98,25 @@ namespace SbnApplicationUTS.Design
 
             var asset = new Asset
             {
-                TanggalTransaksi = dtpTanggal.Value,
+                TanggalTransaksi = dtpTanggal.Value.ToUniversalTime(),
                 BuyerId = (int)cmbBuyer.SelectedValue,
                 SBNId = (int)cmbSBN.SelectedValue,
                 Jumlah = int.Parse(txtJumlah.Text),
                 TotalHarga = decimal.Parse(txtTotal.Text)
             };
+            try
+            {
+                _context.Assets.Add(asset);
+                _context.SaveChanges();
 
-            _context.Assets.Add(asset);
-            _context.SaveChanges();
-
-            LoadData();
-            ClearForm();
+                LoadData();
+                ClearForm();
+                MessageBox.Show("Data berhasil disimpan!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.InnerException?.Message ?? ex.Message, "Error Saat Simpan");
+            }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -194,6 +218,7 @@ namespace SbnApplicationUTS.Design
 
         private void cmbSBN_SelectedIndexChanged(object sender, EventArgs e)
         {
+          
             if (cmbSBN.SelectedValue != null && int.TryParse(cmbSBN.SelectedValue.ToString(), out int sbnId))
             {
                 using (var db = new AppDbContext())

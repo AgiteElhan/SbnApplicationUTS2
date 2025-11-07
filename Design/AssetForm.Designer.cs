@@ -39,8 +39,6 @@
             txtTotal = new TextBox();
             dtpTanggal = new DateTimePicker();
             btnAdd = new Button();
-            btnUpdate = new Button();
-            btnDelete = new Button();
             btnClear = new Button();
             dataGridView1 = new DataGridView();
             cmbBuyer = new ComboBox();
@@ -160,7 +158,7 @@
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = Color.White;
-            btnAdd.Location = new Point(85, 635);
+            btnAdd.Location = new Point(200, 637);
             btnAdd.Margin = new Padding(4);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(90, 34);
@@ -168,36 +166,6 @@
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
-            // 
-            // btnUpdate
-            // 
-            btnUpdate.BackColor = Color.FromArgb(45, 45, 45);
-            btnUpdate.FlatAppearance.BorderSize = 0;
-            btnUpdate.FlatStyle = FlatStyle.Flat;
-            btnUpdate.ForeColor = Color.White;
-            btnUpdate.Location = new Point(200, 635);
-            btnUpdate.Margin = new Padding(4);
-            btnUpdate.Name = "btnUpdate";
-            btnUpdate.Size = new Size(90, 34);
-            btnUpdate.TabIndex = 19;
-            btnUpdate.Text = "Update";
-            btnUpdate.UseVisualStyleBackColor = false;
-            btnUpdate.Click += btnUpdate_Click;
-            // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = Color.FromArgb(45, 45, 45);
-            btnDelete.FlatAppearance.BorderSize = 0;
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(310, 637);
-            btnDelete.Margin = new Padding(4);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(90, 34);
-            btnDelete.TabIndex = 20;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
-            btnDelete.Click += btnDelete_Click;
             // 
             // btnClear
             // 
@@ -249,7 +217,7 @@
             btnBack.FlatAppearance.BorderSize = 0;
             btnBack.FlatStyle = FlatStyle.Flat;
             btnBack.ForeColor = Color.White;
-            btnBack.Location = new Point(85, 762);
+            btnBack.Location = new Point(27, 704);
             btnBack.Margin = new Padding(4);
             btnBack.Name = "btnBack";
             btnBack.Size = new Size(90, 34);
@@ -300,7 +268,7 @@
             btnHitung.FlatAppearance.BorderSize = 0;
             btnHitung.FlatStyle = FlatStyle.Flat;
             btnHitung.ForeColor = Color.White;
-            btnHitung.Location = new Point(85, 699);
+            btnHitung.Location = new Point(312, 637);
             btnHitung.Margin = new Padding(4);
             btnHitung.Name = "btnHitung";
             btnHitung.Size = new Size(90, 34);
@@ -324,8 +292,6 @@
             Controls.Add(cmbBuyer);
             Controls.Add(dataGridView1);
             Controls.Add(btnClear);
-            Controls.Add(btnDelete);
-            Controls.Add(btnUpdate);
             Controls.Add(btnAdd);
             Controls.Add(dtpTanggal);
             Controls.Add(txtTotal);
@@ -357,8 +323,6 @@
         private TextBox txtTotal;
         private DateTimePicker dtpTanggal;
         private Button btnAdd;
-        private Button btnUpdate;
-        private Button btnDelete;
         private Button btnClear;
         private DataGridView dataGridView1;
         private ComboBox cmbBuyer;
