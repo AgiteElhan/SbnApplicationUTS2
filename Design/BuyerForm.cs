@@ -39,11 +39,15 @@ namespace SbnApplicationUTS.Design
         }
         private void LoadData()
         {
-            dgvBuyer.DataSource = db.Buyers.ToList();
-
-            dgvBuyer.AutoGenerateColumns = true;
             var data = db.Buyers.ToList();
+            dgvBuyer.AutoGenerateColumns = true;
             dgvBuyer.DataSource = data;
+
+            // --- Tambahkan pengaturan warna font hitam ---
+            dgvBuyer.DefaultCellStyle.ForeColor = Color.Black; // Warna teks isi grid
+            dgvBuyer.DefaultCellStyle.SelectionForeColor = Color.Black; // Saat dipilih
+            dgvBuyer.ColumnHeadersDefaultCellStyle.ForeColor = Color.Black; // Header kolom
+            dgvBuyer.EnableHeadersVisualStyles = false; // Pastikan warna header diterapkan
         }
         private void ClearForm()
         {

@@ -191,6 +191,7 @@
             // 
             // dgvBuyer
             // 
+            dgvBuyer.BackgroundColor = Color.White;
             dgvBuyer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvBuyer.Location = new Point(552, 130);
             dgvBuyer.Margin = new Padding(4);
